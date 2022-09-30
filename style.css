@@ -1,0 +1,86 @@
+.calculator_container {
+    background-color: lightgreen;
+    border-radius: 20px;
+    
+    display: grid;
+
+    gap: 20px;
+    height: 100vh;
+
+    grid-template-areas:
+    "U U U U   U U U U   U U U U"
+    "Z A A A   A B B C   C C C W"
+    "Z D D E   E E E E   E F F W"
+    "Z G G G   G G G G   G G G W";
+
+    grid-template-rows: 1px 15% 20% 30%;
+    grid-template-columns: 10% repeat(10, 1fr) 10%;
+    grid-gap: 3vw;
+}
+
+@media screen and (max-width: 480px) {
+    .calculator_container { 
+        grid-template-areas: 
+        "J J J J J J J"
+        "H A A A A A I"
+        "H X X B Z Z I"
+        "H C C C C C I"
+        "H Y E E E U I"
+        "H G G G G G I";
+        grid-template-rows: 1px 1fr 1fr 1fr 1fr 2fr;  
+        grid-template-columns: 5px 7% 15% 35% 15% 7% 5px;
+        grid-gap: 3vw;
+   }
+}
+
+.operand_first {
+    color: red;
+    background-color: lightgreen;
+    border: 1px dotted red;
+    border-radius: 20px;
+    grid-area: A;
+}
+
+.operator {
+    color: red;
+    background-color: lightgreen;
+    border: 1px dotted red;
+    border-radius: 20px;
+    grid-area: B;
+}
+
+.operand_second {
+    color: red;
+    background-color: lightgreen;
+    border: 1px dotted red;
+    border-radius: 20px;
+    grid-area: C;
+}
+
+.countButton {
+    color: red;
+    background-color: lightgreen;
+    border: 1px dotted red;
+    border-radius: 20px;
+    grid-area: E;
+}
+
+.countButton:active {
+    box-shadow: inset -2px -2px 3px rgba(255, 255, 255, .6),
+                inset 2px 2px 3px rgba(0, 0, 0, .6);
+}
+
+.result {
+    background-color: lightgreen;
+    border: 1px dotted red;
+    border-radius: 20px;
+    grid-area: G;
+}
+
+.previousResults {
+    color: lightcoral;
+}
+
+.newResult {
+    color: red;
+}
